@@ -678,7 +678,7 @@ function GetMob()
         return CheckNameDoubleQuest()
     end
 end
-local af = {"Royal Squad [Lv. 525]", "Shanda [Lv. 475]"}
+local af = {"Royal Squad", "Shanda"}
 function MobLevelSkip()
     for r, v in next, game.workspace.Enemies:GetChildren() do
         if v:IsA("Model") and table.find(af, v.Name) and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
@@ -1189,15 +1189,15 @@ spawn(
 function f()
     if Sea3 then
         MobFarmRequired = {
-            "Candy Rebel [Lv. 2375]",
-            "Sweet Thief [Lv. 2350]",
-            "Chocolate Bar Battler [Lv. 2325]",
-            "Cocoa Warrior [Lv. 2300]"
+            "Candy Rebel",
+            "Sweet Thief",
+            "Chocolate Bar Battler",
+            "Cocoa Warrior"
         }
     elseif Sea1 then
-        MobFarmRequired = {"Bandit [Lv. 5]"}
+        MobFarmRequired = {"Bandit"}
     elseif Sea2 then
-        MobFarmRequired = {"Raider [Lv. 700]", "Mercenary [Lv. 725]"}
+        MobFarmRequired = {"Raider", "Mercenary"}
     end
     for r, v in pairs(game.Workspace.Enemies:GetChildren()) do
         if
@@ -1217,15 +1217,15 @@ task.spawn(
             if AutoFarmMeter then
                 if Sea3 then
                     MobFarmRequired = {
-                        "Candy Rebel [Lv. 2375]",
-                        "Sweet Thief [Lv. 2350]",
-                        "Chocolate Bar Battler [Lv. 2325]",
-                        "Cocoa Warrior [Lv. 2300]"
+                        "Candy Rebel",
+                        "Sweet Thief",
+                        "Chocolate Bar Battler",
+                        "Cocoa Warrior"
                     }
                 elseif Sea1 then
-                    MobFarmRequired = {"Bandit [Lv. 5]"}
+                    MobFarmRequired = {"Bandit"}
                 elseif Sea2 then
-                    MobFarmRequired = {"Raider [Lv. 700]", "Mercenary [Lv. 725]"}
+                    MobFarmRequired = {"Raider", "Raider"}
                 end
                 if AutoFarmMeter and game.Players.LocalPlayer.Character:FindFirstChild("RaceEnergy") and CanFarm_1 then
                     if type(MobFarmRequired) == "table" then
@@ -2261,7 +2261,7 @@ function CheckMaterialCount(bj)
     end
     return 0
 end
-EctoplasmMobs = {"Ship Deckhand [Lv. 1250]", "Ship Engineer [Lv. 1275]", "Ship Steward [Lv. 1300]"}
+EctoplasmMobs = {"Ship Deckhand", "Ship Engineer", "Ship Steward"}
 EctoplasmMobsSpawn = {}
 for r, v in pairs(EctoplasmMobs) do
     table.insert(EctoplasmMobsSpawn, tostring(v:gsub(" %pLv. %d+%p", "")))
@@ -2776,20 +2776,20 @@ spawn(
                         elseif willspark["Black Leg"] > 0 and willspark["Black Leg"] < 400 then
                             BuyMelee("Black Leg", true)
                             if CheckPhouyeDoor() then
-                                if ReturnBosses("Awakened Ice Admiral [Lv. 1400] [Boss]") then
+                                if ReturnBosses("Awakened Ice Admiral") then
                                     FarmBoss_Toggle:Set(true)
                                     SelectBoss_Dropdown:Refresh(GetBossTable())
-                                    SelectBoss_Dropdown:Set("Awakened Ice Admiral [Lv. 1400] [Boss]")
+                                    SelectBoss_Dropdown:Set("Awakened Ice Admiral")
                                 else
                                     FarmBoss_Toggle:Set(false)
                                 end
                             end
                         elseif willspark["Black Leg"] >= 400 then
                             if CheckPhouyeDoor() then
-                                if ReturnBosses("Awakened Ice Admiral [Lv. 1400] [Boss]") then
+                                if ReturnBosses("Awakened Ice Admiral") then
                                     FarmBoss_Toggle:Set(true)
                                     SelectBoss_Dropdown:Refresh(GetBossTable())
-                                    SelectBoss_Dropdown:Set("Awakened Ice Admiral [Lv. 1400] [Boss]")
+                                    SelectBoss_Dropdown:Set("Awakened Ice Admiral]")
                                 else
                                     FarmBoss_Toggle:Set(false)
                                     if h["HopOption"] then
@@ -2812,20 +2812,20 @@ spawn(
                         if willspark["Fishman Karate"] == 0 or willspark["Fishman Karate"] < 400 then
                             CheckPriceAndBuyMelee("Fishman Karate")
                             if not CheckWaterKey() then
-                                if ReturnBosses("Tide Keeper [Lv. 1475] [Boss]") then
+                                if ReturnBosses("Awakened Ice Admiral") then
                                     FarmBoss_Toggle:Set(true)
                                     SelectBoss_Dropdown:Refresh(GetBossTable())
-                                    SelectBoss_Dropdown:Set("Tide Keeper [Lv. 1475] [Boss]")
+                                    SelectBoss_Dropdown:Set("Awakened Ice Admiral")
                                 else
                                     FarmBoss_Toggle:Set(false)
                                 end
                             end
                         else
                             if not CheckWaterKey() then
-                                if ReturnBosses("Tide Keeper [Lv. 1475] [Boss]") then
+                                if ReturnBosses("Awakened Ice Admiral") then
                                     FarmBoss_Toggle:Set(true)
                                     SelectBoss_Dropdown:Refresh(GetBossTable())
-                                    SelectBoss_Dropdown:Set("Tide Keeper [Lv. 1475] [Boss]")
+                                    SelectBoss_Dropdown:Set("Awakened Ice Admiral")
                                 else
                                     FarmBoss_Toggle:Set(false)
                                     if h["HopOption"] then
@@ -2924,8 +2924,8 @@ spawn(
                                         repeat
                                             TeleportSea(1)
                                             h["Selected Mobs"] = {
-                                                "Fishman Warrior [Lv. 375]",
-                                                "Fishman Commando [Lv. 400]"
+                                                "Fishman Warrior",
+                                                "Fishman Commando"
                                             }
                                             task.wait(15)
                                         until not h["Melee Choosen"]["Godhuman"] or not h["Auto Melee"] or
@@ -3116,7 +3116,7 @@ function AutoNewWorld()
                     end
                 end
             elseif not game.Workspace.Map.Ice.Door.CanCollide then
-                Target = ReturnBosses("Ice Admiral [Lv. 700] [Boss]")
+                Target = ReturnBosses("Ice Admiral")
                 repeat
                     pcall(
                         function()
@@ -5026,8 +5026,8 @@ spawn(
                         else
                             if game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CheckBlockPart") then
                             elseif game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CheckBlockPart") then
-                                if CheckBoss("Order [Lv. 1250] [Raid Boss]") then
-                                    Target = ReturnBosses("Order [Lv. 1250] [Raid Boss]")
+                                if CheckBoss("Order") then
+                                    Target = ReturnBosses("Order")
                                     KillMob(Target)
                                 else
                                     if not CheckMicrochip() and game.Players.LocalPlayer.Data.Fragments.Value >= 1000 then
@@ -5050,19 +5050,19 @@ spawn(
         end
     end
 )
-EctoplasmMobs = {"Ship Deckhand [Lv. 1250]", "Ship Engineer [Lv. 1275]", "Ship Steward [Lv. 1300]"}
+EctoplasmMobs = {"Ship Deckhand", "Ship Engineer", "Ship Steward"}
 DoughBoss = {
-    "Dough King [Lv. 2300] [Raid Boss]",
-    "Cake Prince [Lv. 2300] [Raid Boss]",
-    "rip_indra True Form [Lv. 5000] [Raid Boss]"
+    "Dough King",
+    "Cake Prince",
+    "rip_indra True Form"
 }
 MobsCakePrince = {
-    "Cookie Crafter [Lv. 2200]",
-    "Cake Guard [Lv. 2225]",
+    "Cookie Crafter",
+    "Cake Guard",
     "Baking Staff [Lv. 2250]",
-    "Head Baker [Lv. 2275]"
+    "Head Baker"
 }
-CocoaMobs = {"Cocoa Warrior [Lv. 2300]", "Chocolate Bar Battler [Lv. 2325]"}
+CocoaMobs = {"Cocoa Warrior", "Chocolate Bar Battler"}
 task.spawn(
     function()
         while task.wait() do
@@ -5139,8 +5139,8 @@ task.spawn(
                                 break
                             end
                         else
-                            if CheckBoss("Cursed Captain [Lv. 1325] [Raid Boss]") then
-                                Target = ReturnBosses("Cursed Captain [Lv. 1325] [Raid Boss]")
+                            if CheckBoss("Cursed Captain") then
+                                Target = ReturnBosses("Cursed Captain")
                                 repeat
                                     wait()
                                     if
@@ -5663,7 +5663,7 @@ task.spawn(
 )
 function IsSwanPirate()
     for r, v in pairs(game.Workspace.Enemies:GetChildren()) do
-        if v.Name == "Swan Pirate [Lv. 775]" and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+        if v.Name == "Swan Pirate" and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
             return true
         end
     end
@@ -5983,7 +5983,7 @@ spawn(
                             if IsSwanPirate() then
                                 for r, v in pairs(game.Workspace.Enemies:GetChildren()) do
                                     if
-                                        v.Name == "Swan Pirate [Lv. 775]" and v:FindFirstChild("Humanoid") and
+                                        v.Name == "Swan Pirate" and v:FindFirstChild("Humanoid") and
                                             v:FindFirstChild("HumanoidRootPart") and
                                             v.Humanoid.Health > 0
                                      then
@@ -6012,11 +6012,11 @@ spawn(
                             "Bartilo"
                         ) == 1
                      then
-                        Jeremy = CheckBoss("Jeremy [Lv. 850] [Boss]")
+                        Jeremy = CheckBoss("Jeremy")
                         if Jeremy then
-                            Target = ReturnBosses("Jeremy [Lv. 850] [Boss]")
+                            Target = ReturnBosses("Jeremy")
                             if
-                                game.Workspace.Enemies:FindFirstChild("Jeremy [Lv. 850] [Boss]") and
+                                game.Workspace.Enemies:FindFirstChild("Jeremy") and
                                     Target:FindFirstChild("Humanoid") and
                                     Target.Humanoid.Health > 0
                              then
@@ -6193,7 +6193,7 @@ spawn(
                                 if IsSwanPirate() then
                                     for r, v in pairs(game.Workspace.Enemies:GetChildren()) do
                                         if
-                                            v.Name == "Swan Pirate [Lv. 775]" and v:FindFirstChild("Humanoid") and
+                                            v.Name == "Swan Pirate" and v:FindFirstChild("Humanoid") and
                                                 v.Humanoid.Health > 0
                                          then
                                             pcall(
@@ -6866,13 +6866,13 @@ function HopLowPlayer()
     SaveSettings2()
 end
 MobsCakePrince = {
-    "Cookie Crafter [Lv. 2200]",
-    "Cake Guard [Lv. 2225]",
-    "Baking Staff [Lv. 2250]",
-    "Head Baker [Lv. 2275]"
+    "Cookie Crafter",
+    "Cake Guard",
+    "Baking Staff",
+    "Head Baker"
 }
 MobsCakePrinceSpawns = {}
-if string.find(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()[1].Name, "Lv.") then
+if string.find(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()[1].Name, "Cookie Crafter") then
     MobsCakePrinceSpawns = MobsCakePrince
     wait()
 else
@@ -6891,7 +6891,7 @@ function getCakePrinceMobs()
         end
     end
 end
-CakePrinceBosses = {"Dough King [Lv. 2300] [Raid Boss]", "Cake Prince [Lv. 2300] [Raid Boss]"}
+CakePrinceBosses = {"Dough King", "Cake Prince"}
 function getCakePrince()
     for r, v in pairs(game.Workspace.Enemies:GetChildren()) do
         if
@@ -6937,13 +6937,13 @@ spawn(
     end
 )
 BoneMobs = {
-    "Reborn Skeleton [Lv. 1975]",
-    "Living Zombie [Lv. 2000]",
-    "Demonic Soul [Lv. 2025]",
-    "Posessed Mummy [Lv. 2050]"
+    "Reborn Skeleton",
+    "Living Zombie",
+    "Demonic Soul",
+    "Posessed Mummy"
 }
 BoneMobsSpawns = {}
-if string.find(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()[1].Name, "Lv.") then
+if string.find(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()[1].Name, "Reborn Skeleton") then
     BoneMobsSpawns = BoneMobs
 else
     for r, v in pairs(BoneMobs) do
@@ -7094,7 +7094,7 @@ function AutoActiveColorRip_Indra()
         firetouchinterest(v.TouchInterest)
     end
 end
-Elites = {"Deandre [Lv. 1750]", "Urban [Lv. 1750]", "Diablo [Lv. 1750]"}
+Elites = {"Deandre", "Urban", "Diablo"}
 function CheckElite()
     return CheckMob(Elites, true)
 end
@@ -7259,7 +7259,7 @@ spawn(
                 end
             elseif
                 Sea1 and h["Auto Pole V1"] and
-                    (LocalPlayerLevelValue >= 150 and CheckBoss("Thunder God [Lv. 575] [Boss]"))
+                    (LocalPlayerLevelValue >= 150 and CheckBoss("Thunder God"))
              then
                 if LocalPlayerLevelValue >= 150 then
                     if CheckItem("Pole (1st Form)") then
@@ -7269,8 +7269,8 @@ spawn(
                             end
                         )
                     end
-                    if CheckBoss("Thunder God [Lv. 575] [Boss]") then
-                        Target = CheckBoss("Thunder God [Lv. 575] [Boss]")
+                    if CheckBoss("Thunder God") then
+                        Target = CheckBoss("Thunder God")
                         if game.Workspace.Enemies:FindFirstChild(Target.Name) then
                             repeat
                                 EquipWeapon()
@@ -7430,16 +7430,16 @@ spawn(
                                          then
                                             print("nung 3")
                                             if
-                                                game.ReplicatedStorage:FindFirstChild("Mob Leader [Lv. 120] [Boss]") or
-                                                    game.workspace.Enemies:FindFirstChild("Mob Leader [Lv. 120] [Boss]")
+                                                game.ReplicatedStorage:FindFirstChild("Mob Leader") or
+                                                    game.workspace.Enemies:FindFirstChild("Mob Leader")
                                              then
                                                 coountsaber1 = 1
                                                 local by = game.workspace.Enemies
-                                                if game.ReplicatedStorage:FindFirstChild("Mob Leader [Lv. 120] [Boss]") then
+                                                if game.ReplicatedStorage:FindFirstChild("Mob Leader") then
                                                     by = game.ReplicatedStorage
                                                 end
                                                 for r, v in next, by:GetChildren() do
-                                                    if v.Name == "Mob Leader [Lv. 120] [Boss]" and v.Humanoid.Health > 0 then
+                                                    if v.Name == "Mob Leader" and v.Humanoid.Health > 0 then
                                                         repeat
                                                             repeat
                                                                 task.wait()
@@ -7556,14 +7556,14 @@ spawn(
                                     end
                                 end
                             else
-                                if CheckBoss("Saber Expert [Lv. 200] [Boss]") then
-                                    donandngu2 = CheckBoss("Saber Expert [Lv. 200] [Boss]")
+                                if CheckBoss("Saber Expert") then
+                                    donandngu2 = CheckBoss("Saber Expert")
                                     if game.workspace.Enemies:FindFirstChild(donandngu2.Name) then
                                         for r, v in pairs(game.Workspace.Enemies:GetChildren()) do
                                             if v.Name == donandngu2.Name then
                                                 repeat
                                                     task.wait()
-                                                    donandngu2 = CheckBoss("Saber Expert [Lv. 200] [Boss]")
+                                                    donandngu2 = CheckBoss("Saber Expert")
                                                     EnableBuso()
                                                     EquipWeapon()
                                                     Tweento(v.HumanoidRootPart.CFrame * CFrame.new(0, 40, 0))
@@ -7618,7 +7618,7 @@ spawn(
                                 end
                             end
                         elseif not game.Workspace.Map.Ice.Door.CanCollide then
-                            Target = ReturnBosses("Ice Admiral [Lv. 700] [Boss]")
+                            Target = ReturnBosses("Ice Admiral")
                             repeat
                                 pcall(
                                     function()
@@ -9054,8 +9054,8 @@ function AutoPoleV1Function()
         if CheckItem("Pole (1st Form)") then
             AutoPoleV1_Toggle:Set(false)
         end
-        if CheckBoss("Thunder God [Lv. 575] [Boss]") then
-            Target = CheckBoss("Thunder God [Lv. 575] [Boss]")
+        if CheckBoss("Thunder God") then
+            Target = CheckBoss("Thunder God")
             if game.Workspace.Enemies:FindFirstChild(Target.Name) then
                 repeat
                     if Target then
@@ -9260,16 +9260,16 @@ function AutoSaberFunction()
                         end
                     elseif game.ReplicatedStorage.Remotes.CommF_:InvokeServer("ProQuestProgress", "RichSon") == 0 then
                         if
-                            game.ReplicatedStorage:FindFirstChild("Mob Leader [Lv. 120] [Boss]") or
-                                game.workspace.Enemies:FindFirstChild("Mob Leader [Lv. 120] [Boss]")
+                            game.ReplicatedStorage:FindFirstChild("Mob Leader") or
+                                game.workspace.Enemies:FindFirstChild("Mob Leader")
                          then
                             coountsaber1 = 1
                             local by = game.workspace.Enemies
-                            if game.ReplicatedStorage:FindFirstChild("Mob Leader [Lv. 120] [Boss]") then
+                            if game.ReplicatedStorage:FindFirstChild("Mob Leader") then
                                 by = game.ReplicatedStorage
                             end
                             for r, v in next, by:GetChildren() do
-                                if v.Name == "Mob Leader [Lv. 120] [Boss]" and v.Humanoid.Health > 0 then
+                                if v.Name == "Mob Leader" and v.Humanoid.Health > 0 then
                                     repeat
                                         wait()
                                         KillMob(v)
@@ -9450,8 +9450,8 @@ function AutoSaberFunction()
                 end
             end
         else
-            if CheckMob({"Saber Expert [Lv. 200] [Boss]"}, true) then
-                donandngu2 = CheckMob({"Saber Expert [Lv. 200] [Boss]"}, true)
+            if CheckMob({"Saber Expert"}, true) then
+                donandngu2 = CheckMob({"Saber Expert"}, true)
                 if game.workspace.Enemies:FindFirstChild(donandngu2.Name) then
                     KillMob(donandngu2)
                 else
